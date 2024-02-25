@@ -1,0 +1,472 @@
+@font-face {
+    font-family: Pop;
+    src: url("./assets/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Pop;
+    src: url("./assets/fonts/Poppins/Poppins-Italic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Pop;
+    src: url("./assets/fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Pop;
+    src: url("./assets/fonts/Poppins/Poppins-BoldItalic.ttf") format("truetype");
+    font-weight: bold;
+    font-style: italic;
+}
+
+body {
+    font-family: Pop, sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    margin-top: 0;
+}
+
+header {
+    padding: 48px 0 40px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 90%;
+    margin-inline: auto;
+}
+
+.upper-navbar {
+    width: 350px;
+    display: flex; /* I DON'T LIKE THIS! FEELS LIKE TOO MUCH FLEXBOX. */
+    align-items: center;
+}
+
+.upper-navbar ul {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upper-navbar a {
+    text-decoration: none;
+    color: #000;
+    transition: all 50ms ease;
+}
+.upper-navbar a:hover {
+    border-bottom: 2px solid black;
+}
+
+.upper-navbar .icon {
+    height: 1.25rem;
+    display: flex;
+    align-items: center;
+}
+
+.mobile-navbar {
+    background-color: #fffffff1;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -160px;
+    z-index: 1;
+    display: none;
+    align-items: center;
+    padding-inline: 20px;
+    transition: transform 0.7s;
+}
+
+.mobile-navbar ul {
+    height: 25%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-navbar a {
+    text-decoration: none;
+    color: #000;
+    transition: border-bottom 50ms ease;
+}
+.mobile-navbar a:hover {
+    border-bottom: 2px solid black;
+}
+
+.mobile-navbar .icon {
+    height: 1.25rem;
+    display: flex;
+    align-items: center;
+}
+
+.draw-mobile-nav {
+    transform: translateX(-160px);
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 280px;
+}
+.title span{
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.hamburger {
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger .bar {
+    background-color: black;
+    height: 4px;
+    width: 36px;
+    border-radius: 10px;
+}
+.hamburger .bar.white {
+    background-color: white;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-areas:
+        "ethereum ethereum  alphabet"
+        "ethereum ethereum  traveler"
+        "cube     astronaut traveler"
+        "cup      instagram instagram"
+        "cup      instagram instagram"
+        "foam     foam      dimensional"
+        "foam     foam      dimensional";
+    gap: 16px;
+}
+
+#ethereum {
+    grid-area: ethereum;
+}
+#alphabet {
+    grid-area: alphabet;
+}
+#traveler {
+    grid-area: traveler;
+}
+#cube {
+    grid-area: cube;
+}
+#astronaut {
+    grid-area: astronaut;
+}
+#cup {
+    grid-area: cup;
+}
+#instagram {
+    grid-area: instagram;
+}
+#foam {
+    grid-area: foam;
+}
+#dimensional {
+    grid-area: dimensional;
+}
+
+.project {
+    position: relative;
+}
+
+.project img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project .overlay {
+    background-color: #ffffff27;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    /* -webkit-text-stroke: 1px rgba(255, 255, 255, 0.46); */
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 150ms ease;
+}
+.project .overlay:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.overlay.white {
+    color: white;
+}
+
+.page-footer p {
+    width: 90%;
+    text-align: center;
+    margin: 64px auto;
+}
+
+.flip-down-bar {
+    transform-origin: 19%;
+    animation: flipDownBar 0.7s;
+    animation-fill-mode: forwards;
+}
+
+.fade-out-bar {
+    animation: fadeOutBar 0.7s;
+    animation-fill-mode: forwards;
+}
+
+.flip-up-bar {
+    transform-origin: 19%;
+    animation: flipUpBar 0.7s;
+    animation-fill-mode: forwards;
+}
+
+.reverse-flip-down-bar {
+    transform-origin: 19%;
+    animation: reverseFlipDownBar 0.7s;
+    animation-fill-mode: forwards;
+}
+
+.reverse-fade-out-bar {
+    animation: reverseFadeOutBar 0.7s;
+    animation-fill-mode: forwards;
+}
+
+.reverse-flip-up-bar {
+    transform-origin: 19%;
+    animation: reverseFlipUpBar 0.7s;
+    animation-fill-mode: forwards;
+}
+
+@media only screen and (max-width: 956px) {
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    .title {
+        width: 230px;
+    }
+    .title span {
+        font-size: 0.7rem;
+    }
+}
+
+@media only screen and (max-width: 820px) {
+    .container {
+        max-width: 97%;
+    }
+
+    .upper-navbar {
+        width: 270px;
+    }
+    
+    .project-grid {
+        grid-template-areas:
+            "ethereum    ethereum"
+            "alphabet    traveler"
+            "cube        astronaut"
+            "instagram   instagram"
+            "cup         foam"
+            "dimensional dimensional";
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .mobile-navbar {
+        display: flex;
+        /* align-items: center;
+        padding-inline: 20px; */
+    }
+
+    header {
+        padding: 32px 0 20px 0;
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        background-color: white;
+    }
+
+    .upper-navbar {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: end;
+    }
+
+    .project-grid {
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .project-grid {
+        grid-template-areas:
+            "ethereum    ethereum"
+            "alphabet    alphabet"
+            "traveler    traveler"
+            "cube        astronaut"
+            "instagram   instagram"
+            "cup         cup"
+            "foam        foam"
+            "dimensional dimensional";
+        gap: 12px;
+    }
+
+    .project .overlay {
+        font-size: 18px;
+    }
+
+    .page-footer p {
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .mobile-navbar {
+        padding-inline: 10px;
+    }
+    
+    .mobile-navbar ul {
+        font-size: 0.9rem;
+    }
+    
+    .mobile-navbar .icon {
+        height: 1.1rem;
+    }
+
+    header {
+        padding: 28px 0 20px 0;
+    }
+
+    h1 {
+        font-size: 1.05rem;
+    }
+
+    .title {
+        width: 180px;
+    }
+    .title span {
+        font-size: 0.6rem;
+    }
+
+    .hamburger .bar {
+        height: 4px;
+        width: 26px;
+    }
+
+    .project-grid {
+        gap: 4px;
+    }
+
+    .project .overlay {
+        font-size: 12px;
+    }
+
+    .flip-down-bar {
+        transform-origin: 7%;
+    }
+
+    .flip-up-bar {
+        transform-origin: 7%;
+    }
+
+    .reverse-flip-down-bar {
+        transform-origin: 7%;
+    }
+
+    .reverse-flip-up-bar {
+        transform-origin: 7%;
+    }
+}
+
+@media only screen and (max-width: 330px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+
+@keyframes flipDownBar {
+    from{}
+    to{
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes fadeOutBar {
+    from{}
+    to{
+        transform: scale(0);
+        /* opacity: 0; */
+    }
+}
+
+@keyframes flipUpBar {
+    from{}
+    to{
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes reverseFlipDownBar {
+    from{
+        transform: rotate(45deg);
+    }
+    to{
+        transform: rotate(0);
+    }
+}
+
+@keyframes reverseFadeOutBar {
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+
+@keyframes reverseFlipUpBar {
+    from{
+        transform: rotate(-45deg);
+    }
+    to{
+        transform: rotate(0);
+    }
+}
